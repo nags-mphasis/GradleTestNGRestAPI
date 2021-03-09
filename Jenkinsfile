@@ -18,7 +18,7 @@ pipeline {
                 sh './gradlew check'
             }
         }
-        stage('Test Reports') {
+/*        stage('Test Reports') {
             steps {
                 publishHTML (target: [
                 allowMissing: false,
@@ -29,7 +29,7 @@ pipeline {
                 reportName: "Cucumber Report"
                 ])
             }
-        }
+        } */
     }
     
     post {
