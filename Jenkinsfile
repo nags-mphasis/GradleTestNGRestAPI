@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh './gradlew clean build'
+                sh './gradlew clean'
             }
         }
 /*        stage('Sanity check') {
@@ -18,18 +18,18 @@ pipeline {
                 sh './gradlew clean test -DsuiteXmlFile=testng.xml '
             }
         }
-/*        stage('Test Reports') {
+        stage('Test Reports') {
             steps {
                 publishHTML (target: [
                 allowMissing: false,
                 alwaysLinkToLastBuild: false,
                 keepAll: true,
-                reportDir: 'target/HTMLReports',
-                reportFiles: 'Reports.html',
-                reportName: "Cucumber Report"
+                reportDir: 'build/reports/tests/test',
+                reportFiles: 'index.html',
+                reportName: "TestNG Report"
                 ])
             }
-        } */
+        }
     }
     
     post {
