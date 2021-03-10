@@ -15,7 +15,7 @@ pipeline {
         } */
         stage('Test') {
             steps {
-                sh './gradlew check'
+                sh './gradlew clean test -DsuiteXmlFile=testng.xml '
             }
         }
 /*        stage('Test Reports') {
